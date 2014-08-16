@@ -1,0 +1,19 @@
+{
+  "name": "SwigBlog",
+  "version": "0.0.1",
+  "description": "A simple blog app using Express and Swig",
+  "author": "Alex Zywiak <alex.zywiak8@gmail.com>",
+  "repository" :
+    { "type" : "git",
+      "url" : "http://github.com/alexzywiak/swigBlog"
+    },
+  "dependencies": {
+    "mongodb" : "*",
+    "express" : "*",
+    "consolidate" : "*",
+    "swig" : "*",
+    "url" : "*",
+    "body-parser":"*"
+  },
+  "engines": { "node": ">= 0.4.x" }
+}

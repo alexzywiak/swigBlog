@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+  
+  {% for post in posts %}
+    <h1>{{post.body}}</h1>
+    <a href="/post/{{post.slug}}">Read More</a>
+  {% endfor %}
+
+  <a href="/newPost">
+    <div class="btn btn-primary btn-hg">Write a Post</div>
+  </a>
+
+  <a href="/editAllPosts">
+    <div class="btn btn-primary btn-hg">Edit Your Posts</div>
+  </a>
+{% endblock %}
