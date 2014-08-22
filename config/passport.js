@@ -4,7 +4,7 @@
 
 // Load Dependencies
 var LocalStrategy = require( 'passport-local' ).Strategy,
-    User          = require( '../src/js/app/models/user.js' );
+    User          = require( '../app/models/user.js' );
 
 module.exports = function( passport ){
 

@@ -1,8 +1,8 @@
 'use strict';
 
-var User    = require( '../src/js/app/models/user.js' ),
-    Post    = require( '../src/js/app/models/post.js' ),
-    Comment = require( '../src/js/app/models/comment.js').Comment,
+var User    = require( '../app/models/user.js' ),
+    Post    = require( '../app/models/post.js' ),
+    Comment = require( '../app/models/comment.js').Comment,
     toSlug  = require( './toSlug.js' );
 
 module.exports = function( app, passport ){

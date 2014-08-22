@@ -18,13 +18,13 @@ var express      = require('express'),
     bodyParser   = require('body-parser'),
     session      = require('express-session'),
 
-    configDb     = require('./src/js/config/database.js');
+    configDb     = require('./config/database.js');
 
 // Configuration ===============================
 
 mongoose.connect( configDb.url );
 
-require('./src/js/config/passport')( passport );
+require('./config/passport')( passport );
 
 // Middlewarez
 app.use( morgan( 'dev' ) );
@@ -35,7 +35,7 @@ app.use( flash() );
 // Set up views and static files
 app.engine( 'html', cons.swig );
 app.set( 'view engine', 'html' );
-app.set( 'views', __dirname + '/public/views' );
+app.set( 'views', __dirname + '/views' );
 app.use( express.static( __dirname + '/public' ) );
 
 // Passport
@@ -44,7 +44,7 @@ app.use( passport.initialize() );
 app.use( passport.session() );
 
 // Routes ===============================
-require('./src/js/app/routes.js')( app, passport );
+require('./app/routes.js')( app, passport );
 
 // Launch It! ===============================
 app.listen( port );
