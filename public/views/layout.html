@@ -1,0 +1,29 @@
+<!-- views/layout.html -->
+<!doctype html>
+<html>
+  <head>
+    <title>{% block title %}Document{% endblock %}</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+      body    { padding-top:80px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        {% if user %}
+          <p>Logged In as : {{user.local.email}}</p>
+          <p>User ID : {{ user.id }}</p>
+        {% endif %}
+        {% if !user %}
+          <p>Not Logged In</p>
+        {% endif %}
+      </div>
+
+        {% block content %}{% endblock %}
+
+    </div>
+    <footer></footer>
+  </body>
+</html>

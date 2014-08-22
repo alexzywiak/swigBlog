@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+
+  <p>Login or Register with:</p>
+
+    <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+  <a href="/newPost">
+    <div class="btn btn-primary btn-hg">Write a Post</div>
+  </a>
+
+  <a href="/editAllPosts">
+    <div class="btn btn-primary btn-hg">Edit Your Posts</div>
+  </a>
+
+  {% for post in posts %}
+    <h1>{{post.body}}</h1>
+    <a href="/post/{{post.slug}}">Read More</a>
+  {% endfor %}
+{% endblock %}
